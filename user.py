@@ -1,7 +1,7 @@
 class User:
     
-    def __init__(self,message_id):
-        self.message_id = message_id
+    def __init__(self,chat_id):
+        self.chat_id = chat_id
         self.periodicity = ""
 
         self.gadget_type = ""
@@ -9,6 +9,8 @@ class User:
         
         self.time_zone = 0
         self.latitude = 0
+        self.country = ""
+        self.city = ""
 
     def set_periodicity(self, periodicity):
         self.periodicity = periodicity
@@ -22,7 +24,10 @@ class User:
     def set_time_zone(self, time_zone):
         self.time_zone = time_zone
 
-    def set_latitude(self, latitude):
-        self.latitude = latitude
+    def set_country(self, country):
+        self.country = country
+
+    def set_city(self, city):
+        self.city = city
 
     
