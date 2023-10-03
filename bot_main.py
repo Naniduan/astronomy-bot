@@ -42,6 +42,7 @@ def jovian_moons(message):
 
     ansstr = ''
     for i in ans: ansstr+=i
+    ansstr += "\nO - Юпитер\ni - Ио\ne - Европа\ng - Ганимед\nc - Каллисто"
 
     bot.send_message(message.chat.id, ansstr)
 
@@ -55,7 +56,8 @@ def text_handler(message):
         users[message.chat.id].set_gadget_type(message.text)
         bot.send_message(message.chat.id, "напишите фокусное расстояние натуральным числом")
     else:
-        users[message.chat.id].set_gadget_focus(int(message.text))        
+        users[message.chat.id].set_gadget_focus(int(message.text))
+        bot.send_message(message.chat.id, "у вас " + users[message.chat.id].gadget_type + " с фокусным расстоянием " + str(users[message.chat.id].gadget_focus))
 
     
 bot.infinity_polling()
